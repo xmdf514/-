@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>冯麟婷 · 作品集</title>
+<meta name="description" content="冯麟婷作品集 —— 晋江签约作者 · 独立游戏策划：文字作品与可在线试玩的游戏 Demo。" />
+<link rel="stylesheet" href="libs/tdesign.min.css"
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/tdesign-vue-next@1.20.7/dist/tdesign.min.css'" />
+<script src="libs/vue.global.prod.js"></script>
+<script>if(!window.Vue)document.write('<script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"><\/script>')</script>
+<script src="libs/tdesign.min.js"></script>
+<script>if(!window.TDesign)document.write('<script src="https://cdn.jsdelivr.net/npm/tdesign-vue-next@1.20.7/dist/tdesign.min.js"><\/script>')</script>
+<style>
+/* =========================================================
+   Baby Blue · 极简高级 · 线条图标
+   ========================================================= */
+:root{
+  --bb:#7EC3E8;            /* baby blue 主色 */
+  --bb-deep:#4E9CC9;
+  --bb-soft:#A9D8F2;
+  --bb-bg:#F6FAFD;
+  --bb-tint:#E9F4FB;
+  --ink:#253544;
+  --ink-2:#5D7181;
+  --ink-3:#93A4B1;
+  --line:#DDEAF4;
+  --white:#FFFFFF;
+
+  --font-serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun","宋体",serif;
+  --font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+
+  /* TDesign 对齐 baby blue */
+  --td-brand-color:#4E9CC9;
+  --td-brand-color-hover:#6BB0D8;
+  --td-brand-color-active:#3D87B3;
+  --td-brand-color-focus:rgba(126,195,232,.25);
+  --td-brand-color-light:#EDF6FB;
+  --td-brand-color-light-hover:#DDEEF8;
+  --td-bg-color-container:#FFFFFF;
+  --td-text-color-primary:#253544;
+  --td-text-color-secondary:#5D7181;
+  --td-border-level-1-color:#DDEAF4;
+  --td-border-level-2-color:#B9D6EA;
+  --td-radius-default:8px;
+  --td-font-family:var(--font-sans);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[v-cloak]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:
+    radial-gradient(60% 40% at 85% -5%, rgba(126,195,232,.16), transparent 60%),
+    radial-gradient(50% 34% at 0% 18%, rgba(169,216,242,.14), transparent 58%),
+    var(--bb-bg);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--bb);color:#fff}
+button{font-family:inherit}
+a{color:inherit}
+
+.i{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;
+   stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.14em}
+
+.wrap{max-width:1060px;margin:0 auto;padding:0 26px}
+
+/* ---------------- 顶部导航 ---------------- */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,250,253,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.nav-in{display:flex;align-items:center;gap:18px;height:62px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-serif)}
+.nav-logo .seal{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  border:1.5px solid var(--bb-deep);color:var(--bb-deep);font-size:16px;font-weight:700
+}
+.nav-logo b{font-size:17px;letter-spacing:3px}
+.nav-links{margin-left:auto;display:flex;gap:6px;align-items:center}
+.nav-link{
+  padding:8px 14px;font-size:13.5px;color:var(--ink-2);cursor:pointer;border-radius:8px;
+  transition:all .18s var(--ease);text-decoration:none;letter-spacing:.5px
+}
+.nav-link:hover{color:var(--bb-deep);background:var(--bb-tint)}
+@media (max-width:640px){.nav-link span.lab{display:none}.nav-link{padding:8px 10px}}
+
+/* ---------------- Hero ---------------- */
+.hero{position:relative;padding:96px 0 78px;overflow:hidden}
+.hero-deco{position:absolute;right:-40px;top:36px;width:min(420px,52vw);opacity:.9;pointer-events:none}
+.hero-in{position:relative;display:flex;flex-direction:column;gap:20px;max-width:640px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-size:12px;letter-spacing:3px;color:var(--bb-deep);
+  background:var(--bb-tint);border:1px solid var(--line);padding:6px 14px;border-radius:99px
+}
+.hero-kicker .i{font-size:13px}
+.hero-name{font-family:var(--font-serif);font-size:clamp(44px,7vw,68px);letter-spacing:10px;line-height:1.15}
+.hero-name em{font-style:normal;color:var(--bb-deep)}
+.hero-en{font-size:13px;letter-spacing:6px;color:var(--ink-3);text-transform:uppercase;margin-top:-8px}
+.hero-sub{font-size:16.5px;line-height:2;color:var(--ink-2);max-width:560px}
+.hero-sub b{color:var(--bb-deep);font-weight:600}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 26px;cursor:pointer;border:0;
+  background:linear-gradient(135deg,#8FCBEF,#4E9CC9);color:#fff;font-size:14.5px;letter-spacing:2px;
+  border-radius:10px;box-shadow:0 10px 24px -10px rgba(78,156,201,.65);
+  transition:all .2s var(--ease);text-decoration:none
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(78,156,201,.75)}
+.btn-plain{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 26px;cursor:pointer;
+  background:#fff;border:1px solid var(--line);color:var(--ink-2);font-size:14.5px;letter-spacing:2px;
+  border-radius:10px;transition:all .2s var(--ease);text-decoration:none
+}
+.btn-plain:hover{border-color:var(--bb);color:var(--bb-deep);background:var(--bb-tint)}
+
+/* ---------------- 区块通用 ---------------- */
+section{padding:72px 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px;flex-wrap:wrap}
+.sec-no{font-family:var(--font-serif);font-size:15px;color:var(--bb-deep);letter-spacing:2px}
+.sec-title{font-family:var(--font-serif);font-size:clamp(26px,4vw,34px);letter-spacing:6px}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--bb-soft),transparent);min-width:60px}
+.sec-desc{width:100%;font-size:14px;color:var(--ink-3);letter-spacing:1px}
+
+/* 渐入 */
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.fade-up.in{opacity:1;transform:none}
+
+/* ---------------- 文字作品 ---------------- */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.wcard{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;
+  display:flex;flex-direction:column;gap:16px;
+  box-shadow:0 14px 40px -28px rgba(37,53,68,.25);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)
+}
+.wcard:hover{transform:translateY(-4px);border-color:var(--bb-soft);box-shadow:0 22px 48px -26px rgba(78,156,201,.4)}
+.wcard-top{display:flex;gap:14px;align-items:flex-start}
+.wcard-ic{
+  width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:21px;
+  color:var(--bb-deep);background:var(--bb-tint);border:1px solid var(--line)
+}
+.wcard h3{font-family:var(--font-serif);font-size:20px;letter-spacing:2px;line-height:1.4}
+.wcard .sub{font-size:12.5px;color:var(--ink-3);letter-spacing:1px;margin-top:5px;line-height:1.8}
+.wcard p.desc{font-size:14px;line-height:2;color:var(--ink-2)}
+.wcard-tags{display:flex;gap:7px;flex-wrap:wrap}
+.wcard-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.mini-link{
+  display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--bb-deep);
+  text-decoration:none;border-bottom:1px dashed var(--bb-soft);padding-bottom:2px;transition:all .16s var(--ease)
+}
+.mini-link:hover{border-bottom-color:var(--bb-deep)}
+.mini-link .i{font-size:13px}
+
+/* 选段折叠面板 */
+.ex-panels{margin-top:2px}
+.ex-panels .t-collapse{background:transparent;border:0}
+.ex-panels .t-collapse-item__wrapper{background:var(--bb-tint);border-radius:0 0 12px 12px}
+.ex-panels .t-collapse-item{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff;overflow:hidden}
+.ex-panels .t-collapse-item__header{font-size:13.5px;letter-spacing:1px;color:var(--ink-2);padding:12px 18px}
+.ex-panels .t-collapse-item__header .t-collapse-item__header-right{color:var(--bb-deep)}
+.ex-panels .t-collapse-item__content{padding:2px 18px 16px}
+.excerpt{font-family:var(--font-serif);font-size:14px;line-height:2.25;color:var(--ink-2);white-space:pre-line;text-align:justify}
+.excerpt::before{content:"「";color:var(--bb);margin-right:2px}
+
+/* ---------------- 游戏策划 ---------------- */
+.ggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.gcard{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;
+  display:flex;flex-direction:column;gap:14px;overflow:hidden;
+  box-shadow:0 14px 40px -28px rgba(37,53,68,.25);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)
+}
+.gcard::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--bb),var(--bb-soft));opacity:0;transition:opacity .25s var(--ease)
+}
+.gcard:hover{transform:translateY(-4px);border-color:var(--bb-soft);box-shadow:0 22px 48px -26px rgba(78,156,201,.4)}
+.gcard:hover::before{opacity:1}
+.gcard-ic{
+  width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:26px;
+  color:var(--bb-deep);background:var(--bb-tint);border:1px solid var(--line)
+}
+.gcard h3{font-family:var(--font-serif);font-size:19px;letter-spacing:1.5px}
+.gcard .kind{font-size:11px;letter-spacing:2px;color:var(--bb-deep);margin-bottom:4px}
+.gcard p{font-size:13.5px;line-height:2;color:var(--ink-2)}
+.gcard .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.chip{
+  font-size:11px;letter-spacing:1px;color:var(--bb-deep);
+  background:var(--bb-tint);border:1px solid var(--line);padding:3px 10px;border-radius:99px
+}
+
+/* ---------------- 页脚 ---------------- */
+footer{border-top:1px solid var(--line);padding:44px 0 52px;background:rgba(255,255,255,.6)}
+.foot-in{display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.foot-left{display:flex;flex-direction:column;gap:6px}
+.foot-left b{font-family:var(--font-serif);font-size:16px;letter-spacing:3px}
+.foot-left span{font-size:12px;color:var(--ink-3);letter-spacing:1px;line-height:1.9}
+.foot-right{display:flex;gap:10px;flex-wrap:wrap}
+
+/* TDesign 微调 */
+.t-back-top{color:var(--bb-deep)}
+.t-back-top .t-back-top__icon{background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px -10px rgba(37,53,68,.3)}
+
+@media (max-width:640px){
+  .hero{padding:64px 0 56px}
+  section{padding:52px 0}
+  .wrap{padding:0 20px}
+  .hero-name{letter-spacing:6px}
+}
+</style>
+<style>
+/* ===== 打印专用：A4 分页 / 保留 babyblue ===== */
+.play-link{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:10px;height:38px;width:100%;
+  border:1px solid #4E9CC9;border-radius:10px;
+  color:#4E9CC9;text-decoration:none;font-size:14px;letter-spacing:1px;
+  background:transparent;
+}
+.play-link .i{font-size:15px}
+.gcard-url{
+  display:block;margin-top:8px;text-align:center;
+  font-size:11px;letter-spacing:.2px;color:#5D7181;
+  text-decoration:none;word-break:break-all;line-height:1.6;
+}
+@page{size:A4;margin:10mm 9mm 12mm 9mm}
+@media print{
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .fade-up{opacity:1 !important;transform:none !important}
+  body{
+    background:#F6FAFD !important;
+    background-image:radial-gradient(70% 45% at 88% -6%,rgba(126,195,232,.12),transparent 60%) !important;
+    background-attachment:scroll !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    overflow:visible !important;
+  }
+  .nav,.t-back-top{display:none !important}
+  .wrap{max-width:100% !important;padding:0 !important}
+  .hero{padding:6px 0 24px !important}
+  .hero-deco{width:170px !important;top:-18px !important;right:-16px !important;opacity:.35 !important}
+  .hero-name{font-size:46px !important;letter-spacing:8px !important}
+  section{padding:18px 0 !important}
+  #games{padding:14px 0 4px !important}
+  #games .sec-head{margin-bottom:10px !important}
+  #games .gcard{padding:16px !important}
+  #games .ggrid{gap:12px !important}
+  .gcard-url{margin-top:6px !important}
+  .sec-head{margin-bottom:16px !important;break-after:avoid;break-inside:avoid}
+  .wgrid,.ggrid{gap:14px !important}
+  .wgrid{grid-template-columns:1fr !important}
+  .ggrid > .gcard:last-child{grid-column:1 / -1;width:calc(50% - 7px);justify-self:center}
+  .wcard,.gcard{box-shadow:none !important;break-inside:avoid}
+  .wcard{padding:20px !important}
+  .gcard{padding:20px !important}
+  .ex-panels{break-inside:avoid}
+  .ex-panels .t-collapse-item__header{padding:10px 14px !important}
+  .ex-panels .t-collapse-item__content{padding:2px 14px 12px !important}
+  .excerpt{font-size:12.5px !important;line-height:1.95 !important}
+  footer{padding:8px 0 0 !important;break-inside:avoid}
+  footer .foot-left b{font-size:15px !important}
+  footer .foot-left span{font-size:11px !important;line-height:1.7 !important}
+}
+</style>
+</head>
+<body>
+
+<!-- 线条图标精灵 -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ic-quill" viewBox="0 0 24 24"><path d="M20.5 3.5c-6 1-11 4.5-13.5 10L5 21l1.5-2 2-2 2-2c2.5-2.5 5.5-4.5 10-11.5Z"/><path d="M8.5 15.5 15 9M5 21c1-4 3-7 6-9.5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M4 19.5A2 2 0 0 1 6 17.5h13M9 6.5h6M9 10h6"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24"><path d="M10 13.5a4 4 0 0 0 5.7 0l3.2-3.2a4 4 0 1 0-5.7-5.7l-1.6 1.6"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3.2 3.2a4 4 0 1 0 5.7 5.7l1.6-1.6"/></symbol>
+  <symbol id="ic-lot" viewBox="0 0 24 24"><path d="M8 3h8l1.5 5.5a5.6 5.6 0 0 1-11 0Z"/><path d="M6.5 8.5h11M7 14h10l-.6 6.5a1.5 1.5 0 0 1-1.5 1.5H9.1a1.5 1.5 0 0 1-1.5-1.5Z"/><path d="M12 14v3"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01M12 12h.01"/></symbol>
+  <symbol id="ic-inn" viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11"/><path d="M4 21h16M9.5 21v-6h5v6M4 10h16"/></symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5Z"/></symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16m0 0 6-6m-6 6-6-6"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.4 6 .9-4.3 4.2 1 6-5.4-2.9-5.4 2.9 1-6L3.3 9.3l6-.9Z"/></symbol>
+  <symbol id="ic-pen" viewBox="0 0 24 24"><path d="M13.5 5.5 18.5 10.5M4 20l1-4.5L15.5 5a2.1 2.1 0 0 1 3 3L8 18.5Z"/><path d="M4 20h16"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></symbol>
+  <symbol id="ic-form" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M9 3.5V2.5h6v1M9 9h6M9 13h6M9 17h3.5"/></symbol>
+</svg>
+
+<div id="app" v-cloak>
+
+  <!-- 顶部导航 -->
+  <nav class="nav">
+    <div class="wrap nav-in">
+      <div class="nav-logo">
+        <span class="seal">冯</span>
+        <b>冯麟婷 <span style="font-size:11px;letter-spacing:2px;color:var(--ink-3)">作品集</span></b>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link" href="#writing"><svg class="i"><use href="#ic-pen"/></svg> <span class="lab">文字作品</span></a>
+        <a class="nav-link" href="#games"><svg class="i"><use href="#ic-dice"/></svg> <span class="lab">游戏策划</span></a>
+        <a class="nav-link" href="#games"><svg class="i"><use href="#ic-play"/></svg> <span class="lab">在线试玩</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <svg class="hero-deco" viewBox="0 0 400 300" fill="none" aria-hidden="true">
+      <path d="M20 240 C90 190 130 220 180 180 C230 140 260 170 300 130" stroke="#A9D8F2" stroke-width="1.5"/>
+      <path d="M40 265 C110 215 150 245 200 205 C250 165 280 195 320 155" stroke="#CDE7F6" stroke-width="1.5"/>
+      <circle cx="330" cy="70" r="34" stroke="#7EC3E8" stroke-width="1.5"/>
+      <circle cx="330" cy="70" r="46" stroke="#CDE7F6" stroke-width="1" stroke-dasharray="3 7"/>
+      <path d="M20 240 L60 240 M40 265 L80 265" stroke="#A9D8F2" stroke-width="1.5"/>
+      <path d="M120 60 l0 26 M107 73 l26 0" stroke="#A9D8F2" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M260 230 l0 18 M251 239 l18 0" stroke="#CDE7F6" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="wrap hero-in">
+      <span class="hero-kicker"><svg class="i"><use href="#ic-sparkle"/></svg>PORTFOLIO · 2026</span>
+      <h1 class="hero-name">冯麟婷</h1>
+      <p class="hero-en">FENG LINTING · WRITER &amp; GAME DESIGNER</p>
+      <p class="hero-sub">
+        <b>香港中文大学（深圳）翻译文学硕士</b>。<br/>
+        <b>晋江文学城签约作者</b>（笔名 玉茗曦），长篇连载《玉骨》持续更新中；
+        同时独立完成<b>游戏策划与前端交互 Demo</b>——从世界观文案到可玩原型，全部可在线试玩。
+      </p>
+      <div class="hero-tags">
+        <span class="chip">签约作者</span>
+        <span class="chip">长篇连载</span>
+        <span class="chip">同人创作</span>
+        <span class="chip">游戏策划</span>
+        <span class="chip">交互设计</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#games"><svg class="i"><use href="#ic-play"/></svg>在线试玩 Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 文字作品 -->
+  <section id="writing">
+    <div class="wrap">
+      <div class="sec-head fade-up">
+        <span class="sec-no">01</span>
+        <h2 class="sec-title">文 字 作 品</h2>
+        <i class="sec-line"></i>
+      </div>
+
+      <div class="wgrid">
+        <!-- 晋江签约 -->
+        <article class="wcard fade-up">
+          <div class="wcard-top">
+            <div class="wcard-ic"><svg class="i"><use href="#ic-book"/></svg></div>
+            <div>
+              <h3>《玉骨》</h3>
+              <p class="sub">晋江文学城 · 签约连载中<br/>笔名：玉茗曦</p>
+            </div>
+          </div>
+          <div class="wcard-tags">
+            <span class="chip">签约作品</span><span class="chip">东方玄幻</span><span class="chip">连载中</span>
+          </div>
+          <div class="wcard-links">
+            <a class="mini-link" href="https://m.jjwxc.net/book2/10995760" target="_blank" rel="noopener">
+              <svg class="i"><use href="#ic-link"/></svg>阅读正文（晋江文学城）
+            </a>
+          </div>
+          <div class="ex-panels">
+            <t-collapse :default-value="['yugu']" expand-mutex>
+              <t-collapse-panel value="yugu" header="选段 · 《玉骨》">
+                <p class="excerpt">一阵风卷过，地上的落叶打着旋，像是折翼的鸟儿一样打着转子飞起又落下。溪流潺潺声不绝于耳，偶有三两鸟鸣夹杂其中。
+
+日出了，光见缝插针，从遮天蔽日的树叶里细细密密地坠落。
+
+那河边被润湿的泥土，混着青草的味道，微苦却清香，伴着每一个清晨和夜晚。
+
+这便是青丘了，它每日都有这样的好景色，亘古不变，过去还是未来在此处似乎并无区别。
+
+不过物以稀为贵，此等自然风光最为世人珍视，千金也难求。
+
+密林深处，躺着一个花纹古老的传送阵，上面的字符似有残缺，光芒微弱却恒定。
+
+旁边的狐族守卫昏昏沉沉，脑袋直往下坠。
+
+怨不得他，这儿毕竟是后山，离狐族聚居地远得很，也没有什么宝贵物件，谁会来这个已经快荒废的地方呢？
+
+传送阵突然旋转起来，惊动了一旁栖着的几只雀儿，带来几不可查的震动，守卫并没留意，已然和周公会面去了。</p>
+              </t-collapse-panel>
+            </t-collapse>
+          </div>
+        </article>
+
+        <!-- 同人创作 -->
+        <article class="wcard fade-up">
+          <div class="wcard-top">
+            <div class="wcard-ic"><svg class="i"><use href="#ic-quill"/></svg></div>
+            <div>
+              <h3>同人作品选段</h3>
+              <p class="sub">Asianfanfics · 持续创作<br/>全部作品见作者主页</p>
+            </div>
+          </div>
+          <div class="wcard-tags">
+            <span class="chip">同人创作</span><span class="chip">场景描写</span><span class="chip">人物刻画</span>
+          </div>
+          <div class="wcard-links">
+            <a class="mini-link" href="https://www.asianfanfics.com/profile/u/Jennifer_yz" target="_blank" rel="noopener">
+              <svg class="i"><use href="#ic-link"/></svg>全部同人作品（Asianfanfics）
+            </a>
+          </div>
+          <div class="ex-panels">
+            <t-collapse :default-value="['ex2']">
+              <t-collapse-panel value="ex2" header="选段 · 何必非真">
+                <p class="excerpt">今天荣昌饭店请来的角儿唱的又是牡丹亭，植村朋哉都快会唱了。身边人推杯换盏，他假笑着应付，靠在椅背上小口小口地喝着酒。
+
+他还很小的时候都是在这样的饭店打工，给那些权贵倒酒端茶，有时也免不了要当他们发泄怨气的工具，像个沙包一样被打来打去。
+
+后来遇到了一个贵人提携，把他拉出了苦海，他从此就死心塌地为他做事，想不到从一个小小的蜡烛商做到倒卖军火，还跟上头的政治人员打上了交道。
+
+他没有感受过什么幸福，穷的时候为了钱，富了又要为了权，好像有一只无形大手推着他这具行尸走肉不停地往前走。
+
+当时刚到这边，他听到的第一场戏曲就是牡丹亭。出于好奇，他去买了书看，那时候还不会中文，找了翻译跟着一点点地学。
+
+他的生活充斥着谎言，一切都是虚假的，真实与他而言好像是一个不可触及的梦，所以他也最喜欢牡丹亭开篇的那句话。
+
+梦中之情，何必非真。
+
+权当是安慰自己的借口吧。
+
+酒局结束了，他的思绪被拉回，赶忙起身扶着旁边醉醺醺的租界警长下楼。
+
+警长又开始跟他拉扯，把他送到车上才肯回去，虽然已经不耐烦到了极点，为了维持体面，植村朋哉还是客气的推了几个来回。
+
+终于坐稳了，他才想起来今天应该是新的司机来接。
+
+她看着很紧张似的，眼神乱转。
+
+...
+
+“久等了。”</p>
+              </t-collapse-panel>
+            </t-collapse>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 游戏策划 -->
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head fade-up">
+        <span class="sec-no">02</span>
+        <h2 class="sec-title">游 戏 策 划</h2>
+        <i class="sec-line"></i>
+        <p class="sec-desc">三个可玩的 Web Demo —— 世界观、文案、交互与前端实现均独立完成，点击链接即可试玩</p>
+      </div>
+
+      <div class="ggrid">
+        <article class="gcard fade-up">
+          <div class="gcard-ic"><svg class="i"><use href="#ic-lot"/></svg></div>
+          <p class="kind">DEMO 01 · 互动页面</p>
+          <h3>金庸武侠世界 · 抽签测运势</h3>
+          <p>
+            以水墨签筒为载体的运势抽取交互页：摇签、解签、签文排版一气呵成，
+            水墨黑白视觉体系与武侠题材高度统一。
+          </p>
+          <div class="tags">
+            <span class="chip">独立策划</span><span class="chip">水墨视觉</span><span class="chip">前端实现</span>
+          </div>
+          <a class="play-link" href="https://xuanxu-yz.github.io/--/" target="_blank" rel="noopener">
+            <svg class="i"><use href="#ic-play"/></svg>在线试玩
+          </a>
+          <a class="gcard-url" href="https://xuanxu-yz.github.io/--/" target="_blank" rel="noopener">xuanxu-yz.github.io/--/</a>
+        </article>
+
+        <article class="gcard fade-up">
+          <div class="gcard-ic"><svg class="i"><use href="#ic-inn"/></svg></div>
+          <p class="kind">DEMO 02 · 模拟经营</p>
+          <h3>模拟经营 · 江湖客栈</h3>
+          <p>
+            黑金水墨风经营模拟：察言观色的对话系统、三位神秘客卿、五种分支结局；
+            支持多玩家独立进度与云端存档——策划、叙事、玩法闭环的完整作品。
+          </p>
+          <div class="tags">
+            <span class="chip">叙事设计</span><span class="chip">分支结局</span><span class="chip">云存档</span>
+          </div>
+          <a class="play-link" href="https://xuanxu-yz.github.io/-/" target="_blank" rel="noopener">
+            <svg class="i"><use href="#ic-play"/></svg>在线试玩
+          </a>
+          <a class="gcard-url" href="https://xuanxu-yz.github.io/-/" target="_blank" rel="noopener">xuanxu-yz.github.io/-/</a>
+        </article>
+
+        <article class="gcard fade-up">
+          <div class="gcard-ic"><svg class="i"><use href="#ic-form"/></svg></div>
+          <p class="kind">DEMO 03 · 互动问卷</p>
+          <h3>OC 问卷 · 原创角色设定</h3>
+          <p>
+            原创角色（OC）互动问卷：以问答式交互梳理角色的世界观、性格与人物关系，
+            一键生成完整的角色档案，为文字与策划创作提供清晰底稿。
+          </p>
+          <div class="tags">
+            <span class="chip">互动问卷</span><span class="chip">角色设定</span><span class="chip">创作工具</span>
+          </div>
+          <a class="play-link" href="http://ocreverie.asia/" target="_blank" rel="noopener">
+            <svg class="i"><use href="#ic-play"/></svg>在线试玩
+          </a>
+          <a class="gcard-url" href="http://ocreverie.asia/" target="_blank" rel="noopener">ocreverie.asia</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-left">
+        <b>冯麟婷 · 作品集</b>
+        <span>晋江笔名 玉茗曦 ｜ 《玉骨》连载中 ｜ 独立游戏策划<br/>持续更新 · 2026</span>
+      </div>
+      <div class="foot-right">
+        <a class="mini-link" href="https://m.jjwxc.net/book2/10995760" target="_blank" rel="noopener">
+          <svg class="i"><use href="#ic-book"/></svg>《玉骨》
+        </a>
+        <a class="mini-link" href="https://www.asianfanfics.com/profile/u/Jennifer_yz" target="_blank" rel="noopener">
+          <svg class="i"><use href="#ic-quill"/></svg>同人主页
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <t-back-top :visible-height="600" style="border-radius:12px"></t-back-top>
+</div>
+
+<script>
+(function () {
+  if (!window.Vue || !window.TDesign) {
+    document.getElementById('app').innerHTML =
+      '<div style="max-width:520px;margin:80px auto;padding:32px;text-align:center;color:#5D7181;' +
+      'background:#fff;border:1px solid #DDEAF4;border-radius:14px;line-height:2">' +
+      '<h3 style="color:#4E9CC9;margin-bottom:10px">资源加载失败</h3>' +
+      '<p>请确认 libs 目录存在，或可访问 cdn.jsdelivr.net 后刷新重试。</p></div>';
+    return;
+  }
+
+  var app = Vue.createApp({
+    setup: function () {
+      function go(url) { window.open(url, '_blank'); }
+
+      /* 滚动渐入 */
+      Vue.onMounted(function () {
+        var els = document.querySelectorAll('.fade-up');
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+            });
+          }, { threshold: 0.12 });
+          els.forEach(function (el) { io.observe(el); });
+        } else {
+          els.forEach(function (el) { el.classList.add('in'); });
+        }
+      });
+
+      return { go: go };
+    }
+  });
+
+  var TDesign = window.TDesign;
+  var tdesign = TDesign && TDesign['default'] ? TDesign['default'] : TDesign;
+  var installed = false;
+  try {
+    if (tdesign && typeof tdesign.install === 'function') { app.use(tdesign); installed = true; }
+  } catch (e) { installed = false; }
+  if (!installed) {
+    Object.keys(TDesign).forEach(function (key) {
+      var comp = TDesign[key];
+      var target = comp && comp.default ? comp.default : comp;
+      var name = target && target.name;
+      if (typeof name === 'string' && name.charAt(0) === 'T') {
+        try { app.component(name, target); } catch (e) { }
+      }
+    });
+  }
+
+  app.mount('#app');
+  var root = document.getElementById('app');
+  if (root) root.removeAttribute('v-cloak');
+})();
+</script>
+</body>
+</html>
